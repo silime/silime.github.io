@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>RaspBerry pi 驱动温湿度传感器aht11  - SILIME</title>
+  <title>RaspBerry pi 驱动温湿度传感器dht11  - SILIME</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -189,7 +189,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      378 字
+      418 字
     </span>
   
 
@@ -199,7 +199,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7
+      8
        分钟
     </span>
   
@@ -229,7 +229,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">RaspBerry pi 驱动温湿度传感器aht11 </h1>
+            <h1 style="display: none">RaspBerry pi 驱动温湿度传感器dht11 </h1>
             
             <div class="markdown-body" id="post-body">
               <h3 id="一、接线"><a href="#一、接线" class="headerlink" title="一、接线"></a>一、接线</h3><p>树莓派       AHT11<br>3.3V   –&gt;   VCC<br>GPIO4  –&gt;   DTA<br>GND    –&gt;   GND</p>
@@ -244,7 +244,19 @@ humidity, temperature = Adafruit_DHT.read_retry(Adafruit_DHT.DHT11, <span class=
     <span class="hljs-keyword">else</span>:
         print(<span class="hljs-string">&#x27;Failed to get reading. Try again!&#x27;</span>)</code></pre>
 
-<h3 id="四、C语言版"><a href="#四、C语言版" class="headerlink" title="四、C语言版"></a>四、C语言版</h3><pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;wiringPi.h&gt;</span></span>
+<h3 id="四、C语言版"><a href="#四、C语言版" class="headerlink" title="四、C语言版"></a>四、C语言版</h3><ol>
+<li>安装wiringPi</li>
+</ol>
+<pre><code class="hljs sh"><span class="hljs-comment">#下载 wiringPi</span>
+git <span class="hljs-built_in">clone</span> https://github.com/WiringPi/WiringPi
+<span class="hljs-comment">#编译 wiringPi</span>
+<span class="hljs-built_in">cd</span> WiringPi
+sudo ./build</code></pre>
+
+<ol start="2">
+<li>C文件</li>
+</ol>
+<pre><code class="hljs C"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;wiringPi.h&gt;</span></span>
 <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdio.h&gt;</span></span>
 <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;stdlib.h&gt;</span></span>
  
@@ -254,7 +266,7 @@ humidity, temperature = Adafruit_DHT.read_retry(Adafruit_DHT.DHT11, <span class=
  
 <span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> HIGH_TIME 32</span>
  
-<span class="hljs-keyword">int</span> pinNumber = <span class="hljs-number">7</span>;
+<span class="hljs-keyword">int</span> pinNumber = <span class="hljs-number">7</span>; <span class="hljs-comment">// pin7</span>
 uint32 databuf;
   
 <span class="hljs-function">uint8 <span class="hljs-title">readSensorData</span><span class="hljs-params">(<span class="hljs-keyword">void</span>)</span></span>
@@ -344,6 +356,12 @@ uint32 databuf;
     <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
 &#125;</code></pre>
 
+<ol start="3">
+<li>编译运行C文件</li>
+</ol>
+<pre><code class="hljs sh">gcc -Wall -o dht11 dht11.c -lwiringPi
+sudo ./dht11</code></pre>
+
             </div>
             <hr>
             <div>
@@ -353,7 +371,7 @@ uint32 databuf;
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/RaspBerry-%E6%A0%91%E8%8E%93%E6%B4%BE-aht11/">RaspBerry 树莓派 aht11</a>
+                      <a class="hover-with-bg" href="/tags/RaspBerry-%E6%A0%91%E8%8E%93%E6%B4%BE-dht11/">RaspBerry 树莓派 dht11</a>
                     
                   </div>
                 
@@ -514,7 +532,7 @@ uint32 databuf;
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "RaspBerry pi 驱动温湿度传感器aht11 &nbsp;",
+        "RaspBerry pi 驱动温湿度传感器dht11 &nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
