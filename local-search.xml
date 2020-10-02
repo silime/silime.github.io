@@ -4,11 +4,11 @@
   
   
   <entry>
-    <title>My fist post</title>
-    <link href="/2020/09/18/My-fist-post/"/>
-    <url>/2020/09/18/My-fist-post/</url>
+    <title>axure学习笔记</title>
+    <link href="/2020/09/29/axure-notes/"/>
+    <url>/2020/09/29/axure-notes/</url>
     
-    <content type="html"><![CDATA[<h3 id="哈哈哈"><a href="#哈哈哈" class="headerlink" title="哈哈哈"></a>哈哈哈</h3><img src="/2020/09/18/My-fist-post/1.jpg" class title="slug 啦啊啊">]]></content>
+    <content type="html"><![CDATA[<h3 id="axure学习笔记"><a href="#axure学习笔记" class="headerlink" title="axure学习笔记"></a>axure学习笔记</h3><hr><h4 id="一、常用快捷键"><a href="#一、常用快捷键" class="headerlink" title="一、常用快捷键"></a>一、常用快捷键</h4><pre><code class="hljs properties"><span class="hljs-attr">F5</span> <span class="hljs-string">生成预览</span><span class="hljs-attr">CTRL</span> <span class="hljs-string">+ Y  重做</span><span class="hljs-attr">CTRL</span> <span class="hljs-string">+ O  打开</span><span class="hljs-attr">CTRL</span> <span class="hljs-string">+ N  新建</span><span class="hljs-attr">CTRL</span> <span class="hljs-string">+ P  打印</span><span class="hljs-attr">CTRL</span> <span class="hljs-string">+ F  查找/替换</span><span class="hljs-attr">CTRL</span> <span class="hljs-string">+ G  群组</span><span class="hljs-attr">CTRL</span> <span class="hljs-string">+ SHIFT + G 取消群组</span><span class="hljs-attr">CTRL</span> <span class="hljs-string">+ K 锁定</span><span class="hljs-attr">CTRL</span> <span class="hljs-string">+ SHIFT + K 解锁</span><span class="hljs-attr">CTRL</span> <span class="hljs-string">+ &#x27; 显示网格</span><span class="hljs-attr">CTRL</span> <span class="hljs-string">+ SHITF + &#x27; 对齐网格</span><span class="hljs-attr">CTRL</span> <span class="hljs-string">+ SHIFT + . 锁定辅助线</span><span class="hljs-attr">CTRL</span> <span class="hljs-string">+ SHIFT + , 对齐辅助线</span><span class="hljs-meta">快捷复制</span> <span class="hljs-string">CTRL + 拖拽 （CTRL + D ）</span><span class="hljs-attr">页面滚动</span><span class="hljs-attr">垂直滚动：鼠标滚动</span><span class="hljs-meta">横向滚动：</span> <span class="hljs-string">SHIFT + 鼠标滚轮</span><span class="hljs-meta">放大缩小：CTRL</span> <span class="hljs-string">+ 滚轮</span><span class="hljs-attr">移动页面：按住空格键，然后鼠标拖动</span><span class="hljs-attr">图层顺序/分布</span><span class="hljs-meta">上移：</span> <span class="hljs-string">CTRL + ]</span><span class="hljs-meta">下移：</span> <span class="hljs-string">CTRL + [</span><span class="hljs-meta">置于顶层：</span> <span class="hljs-string">CTRL + SHIFT + ]</span><span class="hljs-meta">置于顶层：</span> <span class="hljs-string">CTRL + SHIFT + [</span><span class="hljs-meta">左对齐：</span> <span class="hljs-string">CTRL + ALT + L</span><span class="hljs-meta">右对齐：</span> <span class="hljs-string">CTRL + ALT + R</span><span class="hljs-meta">水平居中对齐：CTRL</span> <span class="hljs-string">+ ALT + C</span><span class="hljs-meta">垂直居中对齐：CTRL</span> <span class="hljs-string">+ ALT + M</span><span class="hljs-meta">顶端对齐：CTRL</span> <span class="hljs-string">+ ALT + T</span><span class="hljs-meta">底端对齐：CTRL</span> <span class="hljs-string">+ ALT + B</span><span class="hljs-meta">水平分布：CTRL</span> <span class="hljs-string">+ SHIFT + H</span><span class="hljs-meta">垂直分布：CTRL</span> <span class="hljs-string">+ SHIFT + U</span></code></pre><h4 id="二、页面操作"><a href="#二、页面操作" class="headerlink" title="二、页面操作"></a>二、页面操作</h4><ol><li>等比例调整：按住shift拖动 或点击高度旁小锁</li></ol><hr><img src="/2020/09/29/axure-notes/1.png" class title="slug"><hr><ol start="2"><li>批量调整元素</li></ol><hr>   <img src="/2020/09/29/axure-notes/2.png" class title="slug"><hr><ol start="3"><li>多个图片覆盖调整覆盖顺序</li></ol><hr><img src="/2020/09/29/axure-notes/3.jpg" class title="slug 图片"><img src="/2020/09/29/axure-notes/2.jpg" class title="slug 图片"><hr><ol start="4"><li>组件整体处理</li></ol><hr><img src="/2020/09/29/axure-notes/7.jpg" class title="slug 图片"><hr><ol start="5"><li>占位符意思</li></ol><hr><img src="/2020/09/29/axure-notes/3.png" class title="slug 图片"><hr><ol start="6"><li>矩形圆角，拖动黄色三角形即可</li></ol><hr><img src="/2020/09/29/axure-notes/4.png" class title="slug 图片"><hr><ol start="7"><li>导入图片，双击中间直接导入会根据，图片调整大小，双击边框正方形固定导入图片</li></ol><hr><img src="/2020/09/29/axure-notes/5.png" class title="slug 图片"><img src="/2020/09/29/axure-notes/6.png" class title="slug 图片"><hr><ol start="8"><li>输入框，右边交互输入提示文本和文本长度</li></ol><hr><img src="/2020/09/29/axure-notes/7.png" class title="slug 图片"><img src="/2020/09/29/axure-notes/9.png" class title="slug 图片"><hr><ol start="9"><li>下拉文本选择框，双击即可添加选项</li></ol><hr><img src="/2020/09/29/axure-notes/11.png" class title="slug 图片"><img src="/2020/09/29/axure-notes/10.png" class title="slug 图片"><hr>]]></content>
     
     
     
@@ -17,11 +17,11 @@
   
   
   <entry>
-    <title>My New Post</title>
-    <link href="/2020/09/17/My-New-Post/"/>
-    <url>/2020/09/17/My-New-Post/</url>
+    <title>My fist post</title>
+    <link href="/2020/09/18/My-fist-post/"/>
+    <url>/2020/09/18/My-fist-post/</url>
     
-    <content type="html"><![CDATA[<h3 id="哈哈哈"><a href="#哈哈哈" class="headerlink" title="哈哈哈"></a>哈哈哈</h3><p><img src="/source/img/1.jpg"></p>]]></content>
+    <content type="html"><![CDATA[<h3 id="哈哈哈"><a href="#哈哈哈" class="headerlink" title="哈哈哈"></a>哈哈哈</h3><img src="/2020/09/18/My-fist-post/1.jpg" class title="slug 啦啊啊">]]></content>
     
     
     
