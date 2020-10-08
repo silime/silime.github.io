@@ -68,11 +68,11 @@
   
   
   <entry>
-    <title>My fist post</title>
+    <title>如何导入图片?</title>
     <link href="/2020/09/18/My-fist-post/"/>
     <url>/2020/09/18/My-fist-post/</url>
     
-    <content type="html"><![CDATA[<h3 id="hexo-导入图片"><a href="#hexo-导入图片" class="headerlink" title="hexo 导入图片"></a>hexo 导入图片</h3><img src="/2020/09/18/My-fist-post/1.jpg" class title="slug 啦啊啊"><pre><code class="hljs HTML">&#123;% asset_img 1.jpg slug 啦啊啊 %&#125;</code></pre>]]></content>
+    <content type="html"><![CDATA[<h3 id="hexo-导入图片"><a href="#hexo-导入图片" class="headerlink" title="hexo 导入图片"></a>hexo 导入图片</h3><img src="/2020/09/18/My-fist-post/1.jpg" class title="slug 图片"><hr><blockquote><p>HTML代码</p></blockquote><pre><code class="hljs HTML">&#123;% asset_img 1.jpg slug 图片 %&#125;</code></pre>]]></content>
     
     
     
