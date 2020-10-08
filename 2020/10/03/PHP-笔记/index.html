@@ -328,15 +328,15 @@
 <p>bool defined(string const_name);</p>
 <h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><pre><code class="hljs PHP"><span class="hljs-meta">&lt;?php</span>
 
-    define(<span class="hljs-string">&quot;<span class="hljs-subst">$PI</span>&quot;</span>, <span class="hljs-number">3.14159</span>);
+    define(<span class="hljs-string">&quot;PI&quot;</span>, <span class="hljs-number">3.14159</span>);
 
-    <span class="hljs-keyword">if</span>(defined(<span class="hljs-string">&quot;<span class="hljs-subst">$PI</span>&quot;</span>))
+    <span class="hljs-keyword">if</span>(defined(<span class="hljs-string">&quot;PI&quot;</span>))
 
     &#123;
 
-       <span class="hljs-keyword">echo</span> $PI.<span class="hljs-string">&quot;&lt;br/&gt;&quot;</span>;<span class="hljs-comment">//</span>
+       <span class="hljs-keyword">echo</span> PI,<span class="hljs-string">&quot;&lt;br/&gt;&quot;</span>;<span class="hljs-comment">//</span>
 
-       <span class="hljs-keyword">echo</span> constant(<span class="hljs-string">&quot;<span class="hljs-subst">$PI</span>&quot;</span>);
+       <span class="hljs-keyword">echo</span> constant(<span class="hljs-string">&quot;PI&quot;</span>);
 
     &#125;
 
