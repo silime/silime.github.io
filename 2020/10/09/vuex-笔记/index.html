@@ -17,10 +17,23 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>SILIME</title>
+  <title>vuex 笔记 - SILIME</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
@@ -43,7 +56,7 @@
 
 
 <body>
-  <header style="height: 100vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -159,12 +172,45 @@
             </span>
 
             
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-10-09 21:17" pubdate>
+        2020年10月9日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      0 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      1
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
           </div>
 
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
           
         </div>
       </div>
@@ -173,329 +219,70 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/10/09/vuex-%E7%AC%94%E8%AE%B0/" target="_self">
-          <img src="/img/post.webp" srcset="/img/loading.gif" alt="vuex 笔记">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/10/09/vuex-%E7%AC%94%E8%AE%B0/">vuex 笔记</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/10/09/vuex-%E7%AC%94%E8%AE%B0/">
-          
-          
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">vuex 笔记</h1>
             
-          
-          
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-10-09 21:17" pubdate>
-              2020-10-09
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/10/03/PHP-%E7%AC%94%E8%AE%B0/" target="_self">
-          <img src="/img/post.webp" srcset="/img/loading.gif" alt="PHP 笔记">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/10/03/PHP-%E7%AC%94%E8%AE%B0/">PHP 笔记</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/10/03/PHP-%E7%AC%94%E8%AE%B0/">
-          
-          
-            
-          
-          PHP基本语法
-PHP代码一般嵌入到HTML文档中，通过“”标记分隔PHP代码。 
-
-&lt;?php
-#这里是PHP代码
-?&gt;
-或者通过脚本标签包含PHP代码
-&lt;script language=&quot;php&quot;&gt;
-#php代码
-&lt;/script&gt;
-
-
-注释
-
-&lt;?php
-#Shell 风格
-// 单行注释
-/*
-  多行注释
-  多行注释
-*/
-
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-10-03 21:36" pubdate>
-              2020-10-03
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/10/03/RaspBerry-pi-%E9%A9%B1%E5%8A%A8%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8aht11/" target="_self">
-          <img src="/img/post.webp" srcset="/img/loading.gif" alt="RaspBerry pi 驱动温湿度传感器dht11 ">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/10/03/RaspBerry-pi-%E9%A9%B1%E5%8A%A8%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8aht11/">RaspBerry pi 驱动温湿度传感器dht11 </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/10/03/RaspBerry-pi-%E9%A9%B1%E5%8A%A8%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8aht11/">
-          
-          
-            
-          
-          一、接线树莓派       AHT113.3V   –&gt;   VCCGPIO4  –&gt;   DTAGND    –&gt;   GND
-二、安装Python库sudo pip3 install Adafruit_DHT
-
-三、Python程序读取温度import Adafruit_DHT
-import time
-humidity, temperature = Adafruit_DHT.
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-10-03 01:48" pubdate>
-              2020-10-03
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/RaspBerry-%E6%A0%91%E8%8E%93%E6%B4%BE-dht11/">RaspBerry 树莓派 dht11</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/10/03/RaspBerry-pi-%E9%A9%B1%E5%8A%A8oled12864/" target="_self">
-          <img src="/img/post.webp" srcset="/img/loading.gif" alt="RaspBerry pi 驱动oled12864 ">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/10/03/RaspBerry-pi-%E9%A9%B1%E5%8A%A8oled12864/">RaspBerry pi 驱动oled12864 </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/10/03/RaspBerry-pi-%E9%A9%B1%E5%8A%A8oled12864/">
-          
-          
-            
-          
-          一、材料准备
-树莓派4b，安装rasbian系统的内存卡，支持IIC协议的OLED屏幕，杜邦线二、接线 树莓派                  oled 3.3v        –&gt;        VCC (VDD) GPIO2(SDL)  –&gt;        SDL(SDA) GPIO3(SCL)  –&gt;        SCL(SCK) GND         –&gt;  
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-10-03 00:46" pubdate>
-              2020-10-03
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE-12864-oled-i2c/">树莓派 12864 oled i2c</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/09/29/axure-notes/" target="_self">
-          <img src="/img/post.webp" srcset="/img/loading.gif" alt="axure学习笔记">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/09/29/axure-notes/">axure学习笔记</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/09/29/axure-notes/">
-          
-          
-            
-          
-          axure学习笔记
-一、常用快捷键F5 生成预览
-
-CTRL + Y  重做
-
-CTRL + O  打开
-
-CTRL + N  新建
-
-CTRL + P  打印
-
-CTRL + F  查找/替换
-
-CTRL + G  群组
-
-CTRL + SHIFT + G 取消群组
-
-CTRL + K 锁定
-
-CTRL + SHIFT + K 解锁
-
-CTRL + &#x27; 显示网格
-
-CTRL + SHI
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-09-29 00:03" pubdate>
-              2020-09-29
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/09/18/My-fist-post/" target="_self">
-          <img src="/img/post.webp" srcset="/img/loading.gif" alt="如何导入图片?">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        <a href="/2020/09/18/My-fist-post/">如何导入图片?</a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2020/09/18/My-fist-post/">
-          
-          
-            
-          
-          hexo 导入图片
-
-
-HTML代码
-
-&#123;% asset_img 1.jpg slug 图片 %&#125;
-
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2020-09-18 00:03" pubdate>
-              2020-09-18
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-
-
-
-
-              </div>
+            <div class="markdown-body" id="post-body">
+              
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/10/03/PHP-%E7%AC%94%E8%AE%B0/">
+                        <span class="hidden-mobile">PHP 笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
   </main>
 
@@ -577,6 +364,31 @@ HTML代码
 
 
 
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
 
 
   <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
@@ -584,7 +396,7 @@ HTML代码
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "One More Things&nbsp;",
+        "vuex 笔记&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
@@ -599,6 +411,21 @@ HTML代码
 
 
 
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
 
 
   <script  src="/js/local-search.js" ></script>
@@ -612,6 +439,20 @@ HTML代码
   </script>
 
 
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
 
 
 
