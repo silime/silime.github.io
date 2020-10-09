@@ -189,7 +189,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 字
+      191 字
     </span>
   
 
@@ -199,7 +199,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      2
        分钟
     </span>
   
@@ -232,7 +232,41 @@
             <h1 style="display: none">vuex 笔记</h1>
             
             <div class="markdown-body" id="post-body">
-              
+              <h3 id="VUEX-概述"><a href="#VUEX-概述" class="headerlink" title="VUEX 概述"></a>VUEX 概述</h3><ol>
+<li><p>Vuex是什么</p>
+<p>Vuex 是实现组件全局状态（数据）管理的一种机制，可以方便组件之间数据共享。</p>
+</li>
+<li><p>Vuex统一管理状态好处</p>
+<ol>
+<li>能够在vuex中集中管理数据，易于开发和后期维护。</li>
+<li>能够高效地实现组件之间的数据共享，提高开发效率。</li>
+<li>存储在vuex中的数据是响应式的，能够实时保持数据与页面同步</li>
+</ol>
+</li>
+<li><p>适合存储在vuex中的数据</p>
+<blockquote>
+<p>组件之间共享的数据</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="Vuex安装与使用"><a href="#Vuex安装与使用" class="headerlink" title="Vuex安装与使用"></a>Vuex安装与使用</h3><ol>
+<li>安装vuex依赖包</li>
+</ol>
+<pre><code class="hljs sh">npm install vuex --save</code></pre>
+
+<ol start="2">
+<li>导入Vuex包</li>
+</ol>
+<pre><code class="hljs Java"><span class="hljs-keyword">import</span> Vuex from <span class="hljs-string">&#x27;vuex&#x27;</span>
+Vue.use(Vuex)</code></pre>
+
+<ol start="3">
+<li>创建store对象</li>
+</ol>
+<pre><code class="hljs Java"><span class="hljs-keyword">const</span> store = <span class="hljs-keyword">new</span> Vue.Store(&#123;
+    state: &#123;count: <span class="hljs-number">0</span>&#125; <span class="hljs-comment">//state 存放的全局共享的数据</span>
+&#125;)</code></pre>
+
             </div>
             <hr>
             <div>
