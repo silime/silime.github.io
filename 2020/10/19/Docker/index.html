@@ -261,7 +261,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 <li><code>docker search</code>：从dockerhub上搜索镜像的名字 （docker search -s 30 ubuntu –no-trunc ）</li>
 </ol>
 <blockquote>
-<p>选项： -s 30 ：筛选星标30 –no-trunc ： 显示所有信息<br>2. <code>docker pull </code>下载镜像<br>3. <code>docker rmi </code>删除镜像<br>4. <code>docker rm</code> 删除容器<br>5. <code>docker images</code> 查看下载的镜像<br>6. <code>docker ps </code>查看运行中的容器</p>
+<p>选项： -s 30 ：筛选星标30 –no-trunc ： 显示所有信息<br>2. <code>docker pull</code> 下载镜像<br>3. <code>docker rmi</code>删除镜像<br>4. <code>docker rm</code> 删除容器<br>5. <code>docker images</code> 查看下载的镜像<br>6. <code>docker ps </code>查看运行中的容器</p>
 </blockquote>
 <h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><ol>
 <li><p>新建并运行容器</p>
@@ -270,7 +270,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 <ol>
 <li><p>本地镜像不存在则会执行<code>docker pull 镜像</code></p>
 </li>
-<li><p><code>-d </code>为后台运行模式 可选<code> -it</code> 参数 为容器分配一个伪终端，输入<code>exit</code>后会关闭容器，也可以用<code>Ctrl+P+Q</code>：不关闭容器，退出，<code>--restart=always</code>运行容器时添加启动策略，加入<code> -it</code>参数后<code>exit</code>也不会退出容器</p>
+<li><p><code>-d</code>为后台运行模式 可选<code>-it</code> 参数 为容器分配一个伪终端，输入<code>exit</code>后会关闭容器，也可以用<code>Ctrl+P+Q</code>：不关闭容器，退出，<code>--restart=always</code>运行容器时添加启动策略，加入<code>-it</code>参数后<code>exit</code>也不会退出容器</p>
 </li>
 <li><p>进入正在运行的容器</p>
 <p><code>docker attach 容器ID</code> 进入容器，exit后会关闭容器<br><code>docker exec 容器ID</code> 进入容器 或 （不进去）执行一个任务 <strong>很重要！</strong><br>eg:<br><code>docker exec -it 容器ID /bin/bash</code> //进入主机<br><code>docker exefc ID ls</code> //不进入，执行<code>ls</code>命令</p>
@@ -322,7 +322,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 //思考：当dc01被<span class="hljs-built_in">kill</span> ，文件是否还存在？——存在，且共享均保持</code></pre>
 
-<h5 id="看完上边是不是有点晕，我们通过一个案例来了解一下dockerfile的真面目"><a href="#看完上边是不是有点晕，我们通过一个案例来了解一下dockerfile的真面目" class="headerlink" title="看完上边是不是有点晕，我们通过一个案例来了解一下dockerfile的真面目"></a>看完上边是不是有点晕，我们通过一个案例来了解一下dockerfile的真面目</h5>
+
             </div>
             <hr>
             <div>
