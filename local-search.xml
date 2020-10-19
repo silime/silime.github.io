@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>Docker</title>
+    <link href="/2020/10/19/Docker/"/>
+    <url>/2020/10/19/Docker/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Docker-安装"><a href="#Docker-安装" class="headerlink" title="Docker 安装"></a>Docker 安装</h3><ol><li><p>脚本安装（推荐）</p><pre><code class="hljs bash">curl -fsSL https://get.docker.com -o get-docker.shsudo sh get-docker.sh</code></pre></li><li><p>Centos 安装</p><pre><code class="hljs bash">sudo yum install docker-ce docker-ce-cli containerd.io</code></pre></li><li><p>Ubuntu安装</p><pre><code class="hljs bash">curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -<span class="hljs-comment">#导入密钥</span>sudo add-apt-repository \   <span class="hljs-string">&quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu \</span><span class="hljs-string">   <span class="hljs-subst">$(lsb_release -cs)</span> \</span><span class="hljs-string">   stable&quot;</span><span class="hljs-comment">#添加源地址</span>sudo apt-get update<span class="hljs-comment">#更新</span>sudo apt-get install docker-ce docker-ce-cli containerd.io<span class="hljs-comment">#安装Docker</span></code></pre><p><strong>输入命令 docker -v 查看版本号，出现版本号即安装成功</strong><img src="/2020/10/19/Docker/image-20201019144729867.png" alt="image-20201019144729867"></p></li></ol><h3 id="基本命令和用法"><a href="#基本命令和用法" class="headerlink" title="基本命令和用法"></a>基本命令和用法</h3><p>1. </p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Docker</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>串口通信</title>
     <link href="/2020/10/13/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/"/>
     <url>/2020/10/13/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/</url>
@@ -110,7 +129,7 @@
     <link href="/2020/09/18/My-fist-post/"/>
     <url>/2020/09/18/My-fist-post/</url>
     
-    <content type="html"><![CDATA[<h3 id="hexo-导入图片"><a href="#hexo-导入图片" class="headerlink" title="hexo 导入图片"></a>hexo 导入图片</h3><img src="/2020/09/18/My-fist-post/1.jpg" class title="slug 图片"><hr><blockquote><p>HTML代码</p></blockquote><pre><code class="hljs HTML">&#123;% asset_img 1.jpg slug 图片 %&#125;</code></pre>]]></content>
+    <content type="html"><![CDATA[<h3 id="hexo-导入图片"><a href="#hexo-导入图片" class="headerlink" title="hexo 导入图片"></a>hexo 导入图片</h3><img src="/2020/09/18/My-fist-post/1.jpg" class title="slug 图片"><hr><blockquote><p>HTML代码</p></blockquote><pre><code class="hljs HTML">&#123;% asset_img 1.jpg 图片 %&#125;</code></pre>]]></content>
     
     
     
