@@ -188,13 +188,13 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/10/19/Docker/" target="_self">
-          <img src="/img/IMG_3431.PNG" srcset="/img/loading.gif" alt="Docker">
+          <img src="/img/IMG_3431.PNG" srcset="/img/loading.gif" alt="Docker 学习笔记">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
       <h1 class="index-header">
-        <a href="/2020/10/19/Docker/">Docker</a>
+        <a href="/2020/10/19/Docker/">Docker 学习笔记</a>
       </h1>
 
       <p class="index-excerpt">
@@ -203,16 +203,7 @@
           
             
           
-          Docker 安装
-脚本安装（推荐）
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-
-Centos 安装
-sudo yum install docker-ce docker-ce-cli containerd.io
-
-Ubuntu安装
-curl -fsSL https://download.dock
+          Docker 安装Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从 Apache2.0 协议开源。
         </a>
       </p>
 
@@ -258,13 +249,7 @@ curl -fsSL https://download.dock
           
             
           
-          UART通用异步收发传输器（Universal Asynchronous Receiver/Transmitter)，通常称作UAR。在嵌入式系统中，通常作为 MCU 的外设； 一般来说，由芯片引脚直接引出的一般是 TTL 电平；而中间接有转换芯片的可能就是 RS232 电平。
-
-COM口、USB口是指的物理接口形式(硬件)。而TTL、RS-232、RS-485是指的电平标准(电信号)。
-
-
-
-P
+          UART通用异步收发传输器（Universal Asynchronous Receiver/Transmitter)，通常称作UAR。
         </a>
       </p>
 
@@ -313,22 +298,6 @@ P
           VUEX 概述
 Vuex是什么
 Vuex 是实现组件全局状态（数据）管理的一种机制，可以方便组件之间数据共享。
-
-Vuex统一管理状态好处
-
-能够在vuex中集中管理数据，易于开发和后期维护。
-能够高效地实现组件之间的数据共享，提高开发效率。
-存储在vuex中的数据是响应式的，能够实时保持数据与页面同步
-
-
-适合存储在vuex中的数据
-
-组件之间共享的数据
-
-
-
-Vuex安装与使用
-安装vuex依
         </a>
       </p>
 
@@ -376,26 +345,6 @@ Vuex安装与使用
           
           PHP基本语法
 PHP代码一般嵌入到HTML文档中，通过“”标记分隔PHP代码。 
-
-&lt;?php
-#这里是PHP代码
-?&gt;
-或者通过脚本标签包含PHP代码
-&lt;script language=&quot;php&quot;&gt;
-#php代码
-&lt;/script&gt;
-
-
-注释
-
-&lt;?php
-#Shell 风格
-// 单行注释
-/*
-  多行注释
-  多行注释
-*/
-
         </a>
       </p>
 
@@ -435,11 +384,6 @@ PHP代码一般嵌入到HTML文档中，通过“”标记分隔PHP代码。
             
           
           一、接线树莓派       DHT113.3V   –&gt;   VCCGPIO4  –&gt;   DTAGND    –&gt;   GND
-二、安装Python库sudo pip3 install Adafruit_DHT
-
-三、Python程序读取温度import Adafruit_DHT
-import time
-humidity, temperature = Adafruit_DHT.
         </a>
       </p>
 
@@ -487,8 +431,6 @@ humidity, temperature = Adafruit_DHT.
           
           一、材料准备
 树莓派4b，安装rasbian系统的内存卡，支持IIC协议的OLED屏幕，杜邦线
-
-二、接线 树莓派                  oled 3.3v        –&gt;        VCC (VDD) GPIO2(SDL)  –&gt;        SDL(SDA) GPIO3(SCL)  –&gt;        SCL(SCK) GND         –&gt;
         </a>
       </p>
 
@@ -535,29 +477,6 @@ humidity, temperature = Adafruit_DHT.
             
           
           axure学习笔记
-一、常用快捷键F5 生成预览
-
-CTRL + Y  重做
-
-CTRL + O  打开
-
-CTRL + N  新建
-
-CTRL + P  打印
-
-CTRL + F  查找/替换
-
-CTRL + G  群组
-
-CTRL + SHIFT + G 取消群组
-
-CTRL + K 锁定
-
-CTRL + SHIFT + K 解锁
-
-CTRL + &#x27; 显示网格
-
-CTRL + SHI
         </a>
       </p>
 
@@ -674,6 +593,10 @@ HTML代码
       <i class="iconfont icon-love"></i>
       <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
         <span>Fluid</span></a>
+        <br/>
+        <span id="timeDate">载入天数...</span>
+        <span id="times">载入时分秒...</span>
+        <script src="/js/duration.js"></script>
     </div>
     
 

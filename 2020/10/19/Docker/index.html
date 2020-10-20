@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>Docker - SILIME</title>
+  <title>Docker 学习笔记 - SILIME</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -189,7 +189,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.1k 字
+      1.2k 字
     </span>
   
 
@@ -199,7 +199,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      13
+      14
        分钟
     </span>
   
@@ -229,10 +229,14 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">Docker</h1>
+            <h1 style="display: none">Docker 学习笔记</h1>
             
             <div class="markdown-body" id="post-body">
-              <h3 id="Docker-安装"><a href="#Docker-安装" class="headerlink" title="Docker 安装"></a>Docker 安装</h3><ol>
+              <h3 id="Docker-安装"><a href="#Docker-安装" class="headerlink" title="Docker 安装"></a>Docker 安装</h3><p>Docker 是一个开源的应用容器引擎，基于 Go 语言 并遵从 Apache2.0 协议开源。</p>
+<a id="more"></a>
+<p>Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。</p>
+<p>容器是完全使用沙箱机制，相互之间不会有任何接口（类似 iPhone 的 app）,更重要的是容器性能开销极低</p>
+<ol>
 <li><p>脚本安装（推荐）</p>
 <pre><code class="hljs bash">curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh</code></pre>
@@ -422,6 +426,10 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
       <i class="iconfont icon-love"></i>
       <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
         <span>Fluid</span></a>
+        <br/>
+        <span id="timeDate">载入天数...</span>
+        <span id="times">载入时分秒...</span>
+        <script src="/js/duration.js"></script>
     </div>
     
 
@@ -491,7 +499,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "Docker&nbsp;",
+        "Docker 学习笔记&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
