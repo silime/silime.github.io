@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>Web安全-一句话木马</title>
+    <link href="/2020/10/23/Web%E5%AE%89%E5%85%A8-%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%9C%A8%E9%A9%AC/"/>
+    <url>/2020/10/23/Web%E5%AE%89%E5%85%A8-%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%9C%A8%E9%A9%AC/</url>
+    
+    <content type="html"><![CDATA[<h3 id="一句话木马"><a href="#一句话木马" class="headerlink" title="一句话木马"></a>一句话木马</h3><p>那么一句话木马到底是什么呢?</p><p>先来看看最简单的一句话木马：</p><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> @<span class="hljs-keyword">eval</span>($_POST[<span class="hljs-string">&#x27;cmd&#x27;</span>]) <span class="hljs-meta">?&gt;</span></code></pre><p>Or</p><pre><code class="hljs php"><span class="hljs-meta">&lt;?php</span> @<span class="hljs-keyword">eval</span>($_GET[<span class="hljs-string">&#x27;cmd&#x27;</span>]) <span class="hljs-meta">?&gt;</span></code></pre><p>【<strong>基本原理</strong>】利用<strong>文件上传漏洞</strong>，往目标网站中上传一句话木马，然后你就可以在本地通过中国蚁剑即可获取和控制整个网站目录。或者GET方式传递PHP代码给服务器执行；</p><h3 id="入侵条件"><a href="#入侵条件" class="headerlink" title="入侵条件"></a>入侵条件</h3><p>其中，只要攻击者满足三个条件，就能实现成功入侵：</p><pre><code class="hljs angelscript">（<span class="hljs-number">1</span>）木马上传成功，未被杀；（<span class="hljs-number">2</span>）知道木马的路径在哪；（<span class="hljs-number">3</span>）上传的木马能正常运行。</code></pre><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>如何理解<code>eval()</code>函数？</p><p><strong><code>eval()</code>把字符串作为PHP代码执行</strong>。</p><p>例如：<code>eval(&quot;echo &#39;a&#39;&quot;)</code>;其实就等于直接 <code>echo &#39;a&#39;</code>;再来看看<code>&lt;?php eval($_POST[&#39;pw&#39;]); ?&gt;</code>首先，用post方式接收变量pw，比如接收到了：<code>pw=echo &#39;a&#39;</code>;这时代码就变成<code>&lt;?php eval(&quot;echo &#39;a&#39;;&quot;); ?&gt;</code>。结果如下：<img src="/Web%E5%AE%89%E5%85%A8-%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%9C%A8%E9%A9%AC%5Cimage-20201023014821842.png" alt="image-20201023014821842"></p><h3 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h3><ol><li>先直接上传php文件，不出意外会被过滤掉</li></ol><p><img src="/2020/10/23/Web%E5%AE%89%E5%85%A8-%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%9C%A8%E9%A9%AC/blog1\source_posts\Web安全-一句话木马\image-20201023015616947.png" alt="image-20201023015616947"></p><p><img src="/2020/10/23/Web%E5%AE%89%E5%85%A8-%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%9C%A8%E9%A9%AC/blog1\source_posts\Web安全-一句话木马\image-20201023015550042.png" alt="image-20201023015550042"></p><ol start="2"><li>修改文件名为.dqt试试</li></ol><p><img src="/2020/10/23/Web%E5%AE%89%E5%85%A8-%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%9C%A8%E9%A9%AC/blog1\source_posts\Web安全-一句话木马\image-20201023020142732.png" alt="image-20201023020142732"></p><blockquote><p>也不能上传，说明对内容进行了过滤Σ(っ °Д °;)っ</p></blockquote><p>3. </p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>web</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Docker 学习笔记</title>
     <link href="/2020/10/19/Docker/"/>
     <url>/2020/10/19/Docker/</url>
