@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
-  <title>RK3399广告机瞎折腾 - SILIME</title>
+  <title>Windows10 on arm64 - SILIME</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -167,8 +167,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-12-04 22:36" pubdate>
-        2020年12月4日 晚上
+      <time datetime="2021-05-20 23:42" pubdate>
+        2021年5月20日 晚上
       </time>
     </span>
   
@@ -179,7 +179,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      567 字
+      327 字
     </span>
   
 
@@ -189,7 +189,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8
+      5
        分钟
     </span>
   
@@ -219,133 +219,116 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">RK3399广告机瞎折腾</h1>
+            <h1 style="display: none">Windows10 on arm64</h1>
             
             <div class="markdown-body" id="post-body">
-              <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>咸鱼上买的rk3399 板子，据卖家说是广告机上拆的，200多不过相对于400+的RK3399开发版来说算得上白菜价了，自带4G+16G三星EMMC5.1 flash 还有四组GPIO 和I2C(SDA_2,SCL_2)，加上瑞芯微RK3399开源datasheet，自己移植u-boot和Linux mainline 内核跑起来应该问题不大，</p>
-<a id="more"></a>
-
-<p>后续驱动问题可以便学习驱动开发边补哈哈哈</p>
-<h3 id="板子本体"><a href="#板子本体" class="headerlink" title="板子本体"></a>板子本体</h3><p><img src="/2020/12/04/RK3399%E5%B9%BF%E5%91%8A%E6%9C%BA%E7%9E%8E%E6%8A%98%E8%85%BE/blog1\source_posts\RK3399广告机瞎折腾\215300u18g1g1e1eei716l.png" srcset="/img/loading.gif" alt="img"></p>
-<table>
-<thead>
-<tr>
-<th>部件名称</th>
-<th>芯片型号</th>
-<th>备注说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>CPU</td>
-<td>RK3399</td>
-<td>Dual-core Cortex-A72 up to 1.8GHz;Quad-core Cortex-A53 up to 1.4GHz;Mali-T864 GPU</td>
-</tr>
-<tr>
-<td>RAM</td>
-<td>K4B8G16</td>
-<td>Dual-channel DDR3 1GB * 4</td>
-</tr>
-<tr>
-<td>Flash</td>
-<td>SanDisk SDINBDG4-16G</td>
-<td>eMMC 5.1</td>
-</tr>
-<tr>
-<td>PMU</td>
-<td>RK808D</td>
-<td></td>
-</tr>
-<tr>
-<td>Ethernet</td>
-<td>RTL8211E</td>
-<td>10/100/1000 Base-T</td>
-</tr>
-<tr>
-<td>WIFI+BT</td>
-<td>AP6255</td>
-<td>WIFI IEEE802.11 a/b/g/n/ac;BT4.2</td>
-</tr>
-<tr>
-<td>SATA 3.0</td>
-<td>JMS578</td>
-<td></td>
-</tr>
-<tr>
-<td>USB 2.0</td>
-<td>FE1.1s</td>
-<td>TYPE A Mount Socket * 2 &amp; 4-Pin Connector Socket * 5</td>
-</tr>
-<tr>
-<td>USB 3.0</td>
-<td>VL817-Q7</td>
-<td>TYPE A Mount Socket * 2</td>
-</tr>
-<tr>
-<td>UART</td>
-<td>SP3232EEN</td>
-<td></td>
-</tr>
-<tr>
-<td>HDMI 2.0+LVDS</td>
-<td>358775G + ALC5640</td>
-<td></td>
-</tr>
-<tr>
-<td>Audio PA</td>
-<td>NS4258</td>
-<td>5W * 2</td>
-</tr>
-</tbody></table>
-<h4 id="rockchip启动过程"><a href="#rockchip启动过程" class="headerlink" title="rockchip启动过程"></a>rockchip启动过程</h4><p><img src="/2020/12/04/RK3399%E5%B9%BF%E5%91%8A%E6%9C%BA%E7%9E%8E%E6%8A%98%E8%85%BE/blog1\source_posts\RK3399广告机瞎折腾\2020-07-14-17-08-46.png" srcset="/img/loading.gif" alt="img"></p>
-<p>我们选择左边那一条启动路径（不知道为啥右边那条会跑飞）</p>
-<h3 id="编译Rockchip维护的U-boot"><a href="#编译Rockchip维护的U-boot" class="headerlink" title="编译Rockchip维护的U-boot"></a>编译Rockchip维护的U-boot</h3><p>安装交叉编译器</p>
-<pre><code class="hljs shell">sudo apt-get install gcc-aarch64-linux-gnu gcc-arm-none-eabi -y</code></pre>
-
-<p>安装辅助工具</p>
-<pre><code class="hljs sh">sudo apt install -y build-essential libncurses5-dev git make</code></pre>
-
-<p>首先clone两个仓库</p>
-<pre><code class="hljs awk">git clone https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/rockchip-linux/u</span>-boot.git
-git clone https:<span class="hljs-regexp">//gi</span>thub.com<span class="hljs-regexp">/rockchip-linux/</span>rkbin.git</code></pre>
-
-<p>得到</p>
-<p>rk3399_loader_v1.24.126.bin<br>trust.img<br>uboot.img</p>
-<p>三个文件</p>
-<h4 id="制作idbloader-img"><a href="#制作idbloader-img" class="headerlink" title="制作idbloader.img"></a>制作idbloader.img</h4><pre><code class="hljs apache"><span class="hljs-comment"># 找到rkbin带的ddr初始化文件，用u-boot里面的mkimage制作idbloader.img</span>
-<span class="hljs-attribute">tools</span>/mkimage -n rk<span class="hljs-number">3399</span> -T rksd -d ../rkbin/bin/rk<span class="hljs-number">33</span>/rk<span class="hljs-number">3399</span>_ddr_<span class="hljs-number">800</span>MHz_v<span class="hljs-number">1</span>.<span class="hljs-number">24</span>.bin idbloader.img
-<span class="hljs-comment"># 再往后写miniloader</span>
-<span class="hljs-attribute">cat</span> ../rkbin/bin/rk<span class="hljs-number">33</span>/rk<span class="hljs-number">3399</span>_miniloader_v<span class="hljs-number">1</span>.<span class="hljs-number">26</span>.bin &gt;&gt; idbloader.img</code></pre>
-
-<p>使用rkdeveloptool刷入emmc或者dd到SD卡装进主板即可进入u-boot</p>
-<p>然后用rkdeveloptool初始化ddr</p>
-<pre><code class="hljs elixir">root<span class="hljs-variable">@ubuntu</span><span class="hljs-symbol">:/home/silime</span><span class="hljs-comment"># rkdeveloptool ld</span>
-<span class="hljs-keyword">not</span> found any devices!
-<span class="hljs-comment"># 短接复位后,进入MAskroom</span>
-root<span class="hljs-variable">@ubuntu</span><span class="hljs-symbol">:/home/silime</span><span class="hljs-comment"># rkdeveloptool ld</span>
-DevNo=<span class="hljs-number">1</span>	Vid=<span class="hljs-number">0x2207</span>,Pid=<span class="hljs-number">0x330c</span>,LocationID=<span class="hljs-number">302</span>	Maskrom
-root<span class="hljs-variable">@ubuntu</span><span class="hljs-symbol">:/home/silime</span><span class="hljs-comment"># rkdeveloptool db /tmp/rk3399_loader_v1.24.126.bin </span>
-Downloading bootloader succeeded.</code></pre>
-
-<p>然后<code>rkdeveloptool wl &lt;偏移&gt; &lt;文件名&gt;</code>就可以刷文件了</p>
-<pre><code class="hljs sh">rkdeveloptool wl 0x40 idbloader.img</code></pre>
+              <h4 id="first"><a href="#first" class="headerlink" title="first"></a>first</h4><p>下载这些文件到你的U盘</p>
+<ol>
+<li><p>下载PE</p>
+<p>QQ交流群: 697666196 里下载</p>
+</li>
+<li><p>下载dism++</p>
+<p><a target="_blank" rel="noopener" href="http://www.chuyu.me/zh-Hans/index.html">Dism++</a></p>
+</li>
+<li><p>下载SDM850 驱动</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/edk2-porting/WOA-Drivers">GitHub -WOA-Drivers</a></p>
+</li>
+<li><p>下载windows10 arm64 iso</p>
+<p><a target="_blank" rel="noopener" href="https://uup.rg-adguard.net/">uup</a></p>
+</li>
+<li><p>下载uefi</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/edk2-porting/edk2-sdm845/releases">Releases · edk2-porting/edk2-sdm845 · GitHub</a></p>
+</li>
+<li><p>下载parted</p>
+<p><a target="_blank" rel="noopener" href="https://www.dropbox.com/s/vz8lvn4vl7xrgc4/parted?dl=0">parted</a></p>
+</li>
+<li><p>新建new.txt 文件</p>
+<pre><code class="hljs latex">bcdedit /store Y:<span class="hljs-tag">\<span class="hljs-name">efi</span></span><span class="hljs-tag">\<span class="hljs-name">microsoft</span></span><span class="hljs-tag">\<span class="hljs-name">boot</span></span><span class="hljs-tag">\<span class="hljs-name">bcd</span></span> /set &#123;Default&#125; testsigning on
+bcdedit /store Y:<span class="hljs-tag">\<span class="hljs-name">efi</span></span><span class="hljs-tag">\<span class="hljs-name">microsoft</span></span><span class="hljs-tag">\<span class="hljs-name">boot</span></span><span class="hljs-tag">\<span class="hljs-name">bcd</span></span> /set &#123;Default&#125; nointegritychecks on</code></pre>
 
 
 
-<p><img src="/2020/12/04/RK3399%E5%B9%BF%E5%91%8A%E6%9C%BA%E7%9E%8E%E6%8A%98%E8%85%BE/blog1\source_posts\RK3399广告机瞎折腾\2020-07-14-18-48-28.png" srcset="/img/loading.gif" alt="img"></p>
-<p>进入u-boot</p>
-<h1 id="编译kernel"><a href="#编译kernel" class="headerlink" title="编译kernel"></a>编译kernel</h1><p>首先把linux主线kernel拉下来</p>
-<pre><code class="hljs shell">git clone https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git</code></pre>
+</li>
+</ol>
+<h4 id="second"><a href="#second" class="headerlink" title="second"></a>second</h4><p>​    电脑连接手机进入TWRP</p>
+<ol>
+<li><p>分区</p>
+<pre><code class="hljs sh">cp /sdcard/parted /sbin/ &amp;&amp; chmod 755 /sbin/parted
+umount /data &amp;&amp; umount /sdcard
+parted /dev/block/sda
+rm 17 
+mkpart esp fat32 6559MB 7000MB
+mkpart pe fat32 7000MB 10000MB
+mkpart win ntfs 10000MB 70GB
+mkpart userdata ext4 70GB 125GB
+<span class="hljs-built_in">set</span> 17 esp on</code></pre>
 
-<h4 id="得到如下文件"><a href="#得到如下文件" class="headerlink" title="得到如下文件"></a>得到如下文件</h4><p>arch/arm64/boot/dts/rockchip/rk3399***.dtb<br>arch/arm64/boot/Image</p>
-<h3 id="制作rootfs"><a href="#制作rootfs" class="headerlink" title="制作rootfs"></a>制作rootfs</h3><p>略。。。</p>
-<p><img src="https://naivekun.tk/images/2020-07-14-22-48-48.png" srcset="/img/loading.gif" alt="img"></p>
-<p>刷进去，没什么意外，板子复位就直接跑进系统了，这个rk3399真的牛逼，爆快，4s进登录框</p>
+<ol start="2">
+<li>格式化新分区</li>
+</ol>
+<pre><code class="hljs sh">mkfs.fat -F32 -s1 /dev/block/by-name/pe
+mkfs.fat -F32 -s1 /dev/block/by-name/esp
+mkfs.ntfs -f /dev/block/by-name/win
+mke2fs -t ext4 /dev/block/by-name/userdata
+</code></pre>
+
+<p>挂载PE分区到 /mnt</p>
+<pre><code class="hljs sh">mount /dev/block/by-name/pe /mnt</code></pre>
+
+<ol>
+<li>OTG连接U盘，复制pe文件到PE分区</li>
+</ol>
+<pre><code class="hljs awk">cp -r <span class="hljs-regexp">/usbstorage/</span><span class="hljs-number">20</span>h2pe_new<span class="hljs-regexp">/* /m</span>nt</code></pre>
+
+<ol start="2">
+<li>重启进入 Android </li>
+</ol>
+</li>
+</ol>
+<h4 id="Third"><a href="#Third" class="headerlink" title="Third"></a>Third</h4><ol>
+<li><p>boot uefi </p>
+<pre><code class="hljs sh">fastboot boot uefi.img</code></pre>
+</li>
+<li><p>进入PE系统</p>
+<p>挂载ESP分区</p>
+<pre><code class="hljs sh">diskpart
+select disk 0
+list part
+select part 17
+assign letter=Y</code></pre>
+</li>
+<li><p>安装 windows arm64</p>
+<ol>
+<li>打开dism++ 释放镜像到D盘，并选择释放引导分区</li>
+<li>安装驱动</li>
+</ol>
+</li>
+<li><p>关闭驱动签名</p>
+<pre><code class="hljs sh">bcdedit /store Y:\efi\microsoft\boot\bcd /<span class="hljs-built_in">set</span> &#123;Default&#125; testsigning on
+bcdedit /store Y:\efi\microsoft\boot\bcd /<span class="hljs-built_in">set</span> &#123;Default&#125; nointegritychecks on</code></pre>
+</li>
+<li><p>重启，boot uefi 进入完整Windows系统</p>
+</li>
+<li><p>参考<a target="_blank" rel="noopener" href="https://www.coolapk.com/feed/25682012?shareKey=MjdjMWU2OGQ5NmM5NjA1NWU1MTk~&shareUid=761220&shareFrom=com.coolapk.app_3.0">骁龙845安装Windows10指南</a></p>
+</li>
+</ol>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/arm64/">arm64</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Windows10/">Windows10</a>
+                    
+                      <a class="hover-with-bg" href="/tags/UEFI/">UEFI</a>
+                    
+                  </div>
                 
               </div>
               
@@ -354,9 +337,9 @@ Downloading bootloader succeeded.</code></pre>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/05/20/Windows10-on-arm64/">
+                      <a href="/2021/05/20/Windows10-on-arm64-EN/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Windows10 on arm64</span>
+                        <span class="hidden-mobile">Windows10 on arm64 EN</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -364,8 +347,8 @@ Downloading bootloader succeeded.</code></pre>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/10/28/PHP-Hash/">
-                        <span class="hidden-mobile">PHP Hash</span>
+                      <a href="/2020/12/04/RK3399%E5%B9%BF%E5%91%8A%E6%9C%BA%E7%9E%8E%E6%8A%98%E8%85%BE/">
+                        <span class="hidden-mobile">RK3399广告机瞎折腾</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -544,7 +527,7 @@ Downloading bootloader succeeded.</code></pre>
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "RK3399广告机瞎折腾&nbsp;",
+        "Windows10 on arm64&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
