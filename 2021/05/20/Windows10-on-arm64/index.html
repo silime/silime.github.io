@@ -179,7 +179,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      340 字
+      347 字
     </span>
   
 
@@ -229,11 +229,11 @@
 <li><p>下载dism++</p>
 <p><a target="_blank" rel="noopener" href="http://www.chuyu.me/zh-Hans/index.html">Dism++</a></p>
 </li>
-<li><p>下载SDM850 驱动</p>
+<li><p>下载SDM845 驱动</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/edk2-porting/WOA-Drivers">GitHub -WOA-Drivers</a></p>
 </li>
 <li><p>下载windows10 arm64 iso</p>
-<p><a target="_blank" rel="noopener" href="https://uupdump.net/">UUP dump</a></p>
+<p><a target="_blank" rel="noopener" href="https://uupdump.net/?lang=zh-cn">UUP dump</a></p>
 </li>
 <li><p>下载uefi</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/edk2-porting/edk2-sdm845/releases">Releases · edk2-porting/edk2-sdm845 · GitHub</a></p>
@@ -293,7 +293,7 @@ mke2fs -t ext4 /dev/block/by-name/userdata
 <pre><code class="hljs sh">diskpart
 select disk 0
 list part
-select part 17
+select part 17 //17为你的esp分区号
 assign letter=Y</code></pre>
 </li>
 <li><p>安装 windows arm64</p>
