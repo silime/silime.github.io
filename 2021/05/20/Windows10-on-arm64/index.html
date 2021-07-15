@@ -179,7 +179,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      347 字
+      436 字
     </span>
   
 
@@ -189,7 +189,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5
+      6
        分钟
     </span>
   
@@ -222,9 +222,13 @@
             <h1 style="display: none">Windows10 on arm64</h1>
             
             <div class="markdown-body" id="post-body">
-              <h4 id="first"><a href="#first" class="headerlink" title="first"></a>first</h4><p>下载这些文件到你的U盘</p>
+              <h4 id="first"><a href="#first" class="headerlink" title="first"></a>first</h4><p><strong>本教程仅支持usb正常工作的设备</strong></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/edk2-porting/edk2-sdm845/wiki/Windows%E7%8A%B6%E6%80%81">Windows支持状态</a></p>
+<p>下载这些文件到你的U盘</p>
 <ol>
-<li><p>下载PE<br> <a target="_blank" rel="noopener" href="https://www.dropbox.com/s/5c98gpqehe4n3p0/20h2pe_new.zip?dl=0">20h2pe_new.zip</a><br>或者QQ交流群: 697666196 里下载</p>
+<li><p>下载PE<br> <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Pgaz-bdTiOKFXGAxgYCX6A">20h2pe_new.zip</a></p>
+</li>
+<li><p>提取码：1234[</p>
 </li>
 <li><p>下载dism++</p>
 <p><a target="_blank" rel="noopener" href="http://www.chuyu.me/zh-Hans/index.html">Dism++</a></p>
@@ -242,8 +246,17 @@
 <p><a target="_blank" rel="noopener" href="https://pwdx.lanzoux.com/iUgSEmkrlmh">parted</a></p>
 </li>
 <li><p>新建new.txt 文件</p>
-<pre><code class="hljs latex">bcdedit /store Y:<span class="hljs-tag">\<span class="hljs-name">efi</span></span><span class="hljs-tag">\<span class="hljs-name">microsoft</span></span><span class="hljs-tag">\<span class="hljs-name">boot</span></span><span class="hljs-tag">\<span class="hljs-name">bcd</span></span> /set &#123;Default&#125; testsigning on
-bcdedit /store Y:<span class="hljs-tag">\<span class="hljs-name">efi</span></span><span class="hljs-tag">\<span class="hljs-name">microsoft</span></span><span class="hljs-tag">\<span class="hljs-name">boot</span></span><span class="hljs-tag">\<span class="hljs-name">bcd</span></span> /set &#123;Default&#125; nointegritychecks on</code></pre>
+<pre><code class="hljs awk">diskpart
+sel disk <span class="hljs-number">0</span>
+sel part <span class="hljs-number">17</span> <span class="hljs-comment">#注意17是你的esp分区号</span>
+assign letter=Y
+<span class="hljs-keyword">exit</span>
+
+bcdedit <span class="hljs-regexp">/store Y:\efi\microsoft\boot\bcd /</span>set &#123;Default&#125; testsigning on
+bcdedit <span class="hljs-regexp">/store Y:\efi\microsoft\boot\bcd /</span>set &#123;Default&#125; nointegritychecks on
+
+shutdown -s -t <span class="hljs-number">0</span>
+</code></pre>
 
 
 
@@ -251,38 +264,43 @@ bcdedit /store Y:<span class="hljs-tag">\<span class="hljs-name">efi</span></spa
 </ol>
 <h4 id="second"><a href="#second" class="headerlink" title="second"></a>second</h4><p>​    电脑连接手机进入TWRP</p>
 <ol>
-<li><p>分区（仅限一加6T复制粘贴）</p>
+<li>分区（仅限一加6T复制粘贴）</li>
+</ol>
+<blockquote>
+<p>这可能会损坏你的设备，不慎变砖请使用9008恢复你的设备</p>
+</blockquote>
 <pre><code class="hljs sh">cp /sdcard/parted /sbin/ &amp;&amp; chmod 755 /sbin/parted
 umount /data &amp;&amp; umount /sdcard
 parted /dev/block/sda
-rm 17 
+rm 17 <span class="hljs-comment">#17是userdata分区号 </span>
 mkpart esp fat32 6559MB 7000MB
 mkpart pe fat32 7000MB 10000MB
 mkpart win ntfs 10000MB 70GB
 mkpart userdata ext4 70GB 125GB
+<span class="hljs-comment">#设置17分区为esp分区，这步很重要</span>
 <span class="hljs-built_in">set</span> 17 esp on</code></pre>
 
 <ol start="2">
-<li>格式化新分区</li>
+<li>重启TWRP，格式化新分区</li>
 </ol>
-<pre><code class="hljs sh">mkfs.fat -F32 -s1 /dev/block/by-name/pe
+<pre><code class="hljs sh"><span class="hljs-comment">#某些TWRP是 mkfs.fat -F32 -s1 /dev/block/bootdevice/by-name/pe</span>
+mkfs.fat -F32 -s1 /dev/block/by-name/pe
 mkfs.fat -F32 -s1 /dev/block/by-name/esp
 mkfs.ntfs -f /dev/block/by-name/win
-mke2fs -t ext4 /dev/block/by-name/userdata
-</code></pre>
+mke2fs -t ext4 /dev/block/by-name/userdata</code></pre>
 
-<p>挂载PE分区到 /mnt</p>
+<ol start="3">
+<li>挂载PE分区到 /mnt</li>
+</ol>
 <pre><code class="hljs sh">mount /dev/block/by-name/pe /mnt</code></pre>
 
-<ol>
+<ol start="4">
 <li>OTG连接U盘，复制pe文件到PE分区</li>
 </ol>
 <pre><code class="hljs awk">cp -r <span class="hljs-regexp">/usbstorage/</span><span class="hljs-number">20</span>h2pe_new<span class="hljs-regexp">/* /m</span>nt</code></pre>
 
-<ol start="2">
+<ol start="5">
 <li>重启进入 Android </li>
-</ol>
-</li>
 </ol>
 <h4 id="Third"><a href="#Third" class="headerlink" title="Third"></a>Third</h4><ol>
 <li><p>boot uefi </p>
@@ -294,7 +312,8 @@ mke2fs -t ext4 /dev/block/by-name/userdata
 select disk 0
 list part
 select part 17 //17为你的esp分区号
-assign letter=Y</code></pre>
+assign letter=Y
+<span class="hljs-built_in">exit</span></code></pre>
 </li>
 <li><p>安装 windows arm64</p>
 <ol>
@@ -307,8 +326,6 @@ assign letter=Y</code></pre>
 bcdedit /store Y:\efi\microsoft\boot\bcd /<span class="hljs-built_in">set</span> &#123;Default&#125; nointegritychecks on</code></pre>
 </li>
 <li><p>重启，boot uefi 进入完整Windows系统</p>
-</li>
-<li><p>参考<a target="_blank" rel="noopener" href="https://www.coolapk.com/feed/25682012?shareKey=MjdjMWU2OGQ5NmM5NjA1NWU1MTk~&shareUid=761220&shareFrom=com.coolapk.app_3.0">骁龙845安装Windows10指南</a></p>
 </li>
 </ol>
 
@@ -336,9 +353,9 @@ bcdedit /store Y:\efi\microsoft\boot\bcd /<span class="hljs-built_in">set</span>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/05/20/Windows10-on-arm64-EN/">
+                      <a href="/2021/07/15/Windows10-on-arm64-EN/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Windows10 on arm64 EN</span>
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
