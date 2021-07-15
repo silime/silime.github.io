@@ -179,7 +179,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      575 字
+      696 字
     </span>
   
 
@@ -189,7 +189,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8
+      10
        分钟
     </span>
   
@@ -365,6 +365,10 @@ shutdown -s -t 0
 </li>
 <li><p>重启，boot uefi 进入完整Windows系统</p>
 </li>
+</ol>
+<h4 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h4><ol>
+<li>我需要更新驱动如何进PE？<br>答：进TWRP挂载esp分区，重命名EFI文件夹为其他名字EFIA等，即可进入PE，也可以在fastboot抹掉esp分区fastboot erase esp ，但需要重新格式化esp分区，并在PE恢复引导</li>
+<li>一加卡fastboot如何保留sda分区数据？<br>由于两个boot分区都是unbootable，就会卡fastboot，重刷boot也不会改变unbootable状态，9008刷lun4即sdd分区可解决卡fastboot问题，后面会出教程</li>
 </ol>
 
             </div>
